@@ -116,7 +116,24 @@ const icons = [
 	}
 ];
 
+console.log(icons);
 
+const container = document.getElementById('icons-container');
 
+console.log(container);
 
+let content = '';
 
+icons.forEach(item => {
+    content += `
+                <div class="icon">
+                    <div class="item flex-center">
+                        <i style= "color:${item.color};" class="${item.family}  ${item.prefix}${item.name}"></i>
+                        <div class="item-text">
+                            <span>${item.name}</span>
+                        </div>
+                    </div>
+                </div>`;
+});
+
+container.innerHTML = content;
